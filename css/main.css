@@ -101,6 +101,11 @@ body .loader {
   padding: 20px;
   margin: 100px auto;
 } 
+@media (max-width: 767px) {
+  .game {
+    margin-top: 0px;
+  }
+}
 .game .info-row {
   display: flex;
   justify-content: space-between;
