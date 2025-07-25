@@ -114,6 +114,11 @@ body .loader {
 .game .info-row .word-from span {
   color: #cb1111f8;
 }
+.game .draw-letters-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .game .draw-letters-row .the-draw {
   width: 300px;
   height: 300px;
@@ -189,14 +194,14 @@ body .loader {
   width: 4px;
   height: 50px;
   left: calc(50% + 42px);
-  bottom: calc(204px - 95px);
+  bottom: calc(204px - 85px);
   transform: rotate(-45deg);
 }
 .game .draw-letters-row .the-draw > .hand-right {
   width: 4px;
   height: 50px;
   left: calc(50% + 78px);
-  bottom: calc(204px - 95px);
+  bottom: calc(204px - 85px);
   transform: rotate(45deg);
 }
 .game .draw-letters-row .the-draw > .leg-left {
@@ -212,6 +217,39 @@ body .loader {
   left: calc(50% + 78px);
   bottom: calc(204px - 185px);
   transform: rotate(135deg);
+}
+.game .draw-letters-row .letters {
+  background-color: #ddd;
+  width: calc(100% - 300px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+.game .draw-letters-row .letters span {
+  background-color: #01c587;
+  width: fit-content;
+  height: fit-content;
+  padding: 10px;
+  border-radius: 6px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .game .draw-letters-row {
+    flex-direction: column;
+    gap: 10px
+  }
+  .game .draw-letters-row .letters {
+    gap: 10px;
+    width: 100%;
+  }
+  .game .draw-letters-row .letters span {
+    font-size: 16px;
+    width: calc((100% / 7) - 10px);
+    text-align: center;
+  }  
 }
 /* End Game */
 /* Animation */
