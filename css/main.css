@@ -10,6 +10,22 @@ body {
   padding: 20px;
   font-family: Arial, Helvetica, sans-serif;
 }
+body .loader {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border-width: 3px;
+  border-color: #009c76 transparent #009c76 #009c76;
+  border-style: solid;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-name: spin;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 0.6s;
+}
 @media (max-width: 767px) {
   body {
     padding: 10px;
@@ -34,6 +50,9 @@ body {
   border-radius: 10px;
   font-size: 30px;
   color: white;
+}
+.welcome .title > span {
+  font-weight: bold;
 }
 .welcome .desc {
   background-color: #009c76;
@@ -73,3 +92,135 @@ body {
   }
 }
 /* End Welcome */
+/* Game */
+.game {
+  background-color: #EEE;
+  border-radius: 10px;
+  width: 1000px;
+  max-width: 100%;
+  padding: 20px;
+  margin: 100px auto;
+} 
+.game .info-row {
+  display: flex;
+  justify-content: space-between;
+  background-color: #01c587;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.game .info-row .word-from span {
+  color: #cb1111f8;
+}
+.game .draw-letters-row .the-draw {
+  width: 300px;
+  height: 300px;
+  max-width: 100%;
+  position: relative;
+}
+.game .draw-letters-row .the-draw > .floor,
+.game .draw-letters-row .the-draw > .stand,
+.game .draw-letters-row .the-draw > .stand-stick,
+.game .draw-letters-row .the-draw > .roap,
+.game .draw-letters-row .the-draw > .head,
+.game .draw-letters-row .the-draw > .body,
+.game .draw-letters-row .the-draw > .hand-left,
+.game .draw-letters-row .the-draw > .hand-right,
+.game .draw-letters-row .the-draw > .leg-left,
+.game .draw-letters-row .the-draw > .leg-right {
+  position: absolute;
+  background-color: black;
+}
+.game .draw-letters-row .the-draw > .floor {
+  width: 100px;
+  height: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0px;
+}
+.game .draw-letters-row .the-draw > .stand {
+  width: 4px;
+  height: 250px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 4px;
+}
+.game .draw-letters-row .the-draw > .stand-stick {
+  width: 60px;
+  height: 4px;
+  bottom: 250px;
+  left: 50%;
+}
+.game .draw-letters-row .the-draw > .roap {
+  width: 4px;
+  height: 50px;
+  left: calc(50% + 60px);
+  bottom: 204px;
+} 
+.game .draw-letters-row .the-draw > .roap::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  bottom: -54px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 4px dotted black;
+  border-radius: 50%;
+}
+.game .draw-letters-row .the-draw > .head {
+  width: 40px;
+  height: 40px;
+  border: 4px solid black;
+  border-radius: 50%;
+  position: absolute;
+  left: calc(50% + 42px);
+  bottom: calc(204px - 45px);
+}
+.game .draw-letters-row .the-draw > .body {
+  width: 4px;
+  height: 100px;
+  left: calc(50% + 60px);
+  bottom: calc(204px - 145px)
+}
+.game .draw-letters-row .the-draw > .hand-left {
+  width: 4px;
+  height: 50px;
+  left: calc(50% + 42px);
+  bottom: calc(204px - 95px);
+  transform: rotate(-45deg);
+}
+.game .draw-letters-row .the-draw > .hand-right {
+  width: 4px;
+  height: 50px;
+  left: calc(50% + 78px);
+  bottom: calc(204px - 95px);
+  transform: rotate(45deg);
+}
+.game .draw-letters-row .the-draw > .leg-left {
+  width: 4px;
+  height: 50px;
+  left: calc(50% + 42px);
+  bottom: calc(204px - 185px);
+  transform: rotate(-135deg);
+}
+.game .draw-letters-row .the-draw > .leg-right {
+  width: 4px;
+  height: 50px;
+  left: calc(50% + 78px);
+  bottom: calc(204px - 185px);
+  transform: rotate(135deg);
+}
+/* End Game */
+/* Animation */
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+/* End Animation */
