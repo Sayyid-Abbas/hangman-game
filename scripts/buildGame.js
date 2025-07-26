@@ -1,7 +1,4 @@
-export default async function buildGame() {
-    // We fetch the data from the json object
-    const response = await fetch("words.json");
-    const words = await response.json();
+export default async function buildGame(words) {
     // Make a rondom index to get a random data
     let randomIndex = Math.floor(Math.random() * words.length);
     let chosenData = words[randomIndex];
@@ -42,43 +39,33 @@ export default async function buildGame() {
 
     let floor = document.createElement("div");
     floor.className = "floor";
-    floor.setAttribute("data-index", 1);
     
     let stand = document.createElement("div");
     stand.className = "stand";
-    stand.setAttribute("data-index", 2);
     
     let standStick = document.createElement("div");
     standStick.className = "stand-stick";
-    standStick.setAttribute("data-index", 3);
     
     let roap = document.createElement("div");
     roap.className = "roap";
-    roap.setAttribute("data-index", 4);
     
     let head = document.createElement("div");
     head.className = "head";
-    head.setAttribute("data-index", 5);
     
     let body = document.createElement("div");
     body.className = "body";
-    body.setAttribute("data-index", 6);
     
     let handLeft = document.createElement("div");
     handLeft.className = "hand-left";
-    handLeft.setAttribute("data-index", 7);
     
     let handRight = document.createElement("div");
     handRight.className = "hand-right";
-    handRight.setAttribute("data-index", 8);
     
     let legLeft = document.createElement("div");
     legLeft.className = "leg-left";
-    legLeft.setAttribute("data-index", 9);
     
     let legRight = document.createElement("div");
     legRight.className = "leg-right";
-    legRight.setAttribute("data-index", 10);
 
     theDraw.appendChild(floor);
     theDraw.appendChild(stand);
@@ -116,6 +103,11 @@ export default async function buildGame() {
 
     for(let i = 0; i < randomWord.length; i++) {
         let span = document.createElement("span");
+        span.className = "has-before";
+        // If it has to words we make a space
+        if(randomWord[i] == " ") {
+            span.classList.remove("has-before");
+        }
         answerRow.appendChild(span);
     }
 
@@ -124,5 +116,5 @@ export default async function buildGame() {
     document.body.appendChild(game);
     
     
-    return game;
+    return randomWord;
 }
