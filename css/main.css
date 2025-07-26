@@ -247,6 +247,8 @@ body .loader {
 .game .draw-letters-row .letters span.clicked {
   opacity: 0.1;
   background-color: #140000;
+  pointer-events: none;
+  cursor: default;
 }
 @media (max-width: 767px) {
   .game .draw-letters-row {
