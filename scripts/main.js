@@ -1,4 +1,7 @@
 import buildGame from "./buildGame.js";
+import displayYouLost from "./youLost.js"
+import displayYouWon from "./youWon.js"
+
 
 // Welcome section in the game
 let start = document.querySelector(".start");
@@ -27,18 +30,35 @@ async function startGame() {
 };
 
 function checkAnswers() {
+
     let lettersContainer = document.querySelector(".letters");
     let letters = document.querySelectorAll(".letters span");
+
+
     lettersContainer.addEventListener("click", (e) => {
         letters.forEach((letter) => {
             if(letter.contains(e.target)) {
                 console.log(randomWord);
+                // If the letter is in the word we put it in 
+                // the row letters
                 if(checkLetter(letter.textContent) > -1) {
-                    putLetterInRow(letter.textContent);
+                   let rowLength = putLetterInRow(letter.textContent);
+                   console.log(rowLength);
+                   // Check if we completed the word
+                    if(randomWord.length == rowLength) {
+                        displayYouWon();
+                    }
                 } else {
                     wrongTrys++;
+                    // Check if we did kill the guy :3
                     displayHangedMan(wrongTrys);
+                    if(wrongTrys == 10) {
+                        displayYouLost();
+                    }
                 }
+                // After prossecing the lettter
+                // we check if we need it one more or not
+                // if not, we disable it
                 disableLetter(letter);
             }
         })
@@ -52,12 +72,18 @@ function checkLetter(letter) {
 
 // Put The letter In Its position 
 function putLetterInRow(letter) {
+    let currentLettersCount = 0;
     let answerRow = Array.from(document.querySelectorAll(".answer-row > span"));
+    for(let i = 0; i < answerRow.length; i++) {
+        if(answerRow[i].textContent != "") {
+            currentLettersCount++;
+        }
+    }
     for(let i = 0; i < randomWord.length; i++) {
         if(randomWord[i].toLowerCase() == letter.toLowerCase() && answerRow[i].textContent == "") {
             answerRow[i].textContent = letter;
-            return;
-        }
+            return ++currentLettersCount;
+        } 
     }
 }
 
