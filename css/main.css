@@ -100,10 +100,69 @@ body .loader {
   max-width: 100%;
   padding: 20px;
   margin: 100px auto;
+  position: relative;
 } 
 @media (max-width: 767px) {
   .game {
     margin-top: 0px;
+  }
+}
+.game .lost,
+.game .win {
+  width: 500px;
+  height: 300px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #3333338b;
+}
+.game .lost > h3,
+.game .win > h3 {
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+.game .win > h3 {
+  background-color: #02c782;
+}
+.game .lost > h3 {
+  background-color: rgb(222, 4, 4);
+}
+.game .lost > .next,
+.game .win > .next {
+  background-color: #00949c;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+.game .lost > .next:hover,
+.game .win > .next:hover {
+  background-color: #007b82;
+}
+@media (max-width: 767px) {
+  .game .lost > h3,
+  .game .win > h3 {
+    font-size: 20px;
+  }
+  .game .lost > .next,
+  .game .win > .next {
+    font-size: 14px;
+  }
+  .game .lost > .next:hover,
+  .game .win > .next:hover {
+    background-color: #00949c;
   }
 }
 .game .info-row {
