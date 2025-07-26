@@ -142,6 +142,7 @@ body .loader {
 .game .draw-letters-row .the-draw > .leg-right {
   position: absolute;
   background-color: black;
+  /* display: none; */
 }
 .game .draw-letters-row .the-draw > .floor {
   width: 100px;
@@ -233,13 +234,19 @@ body .loader {
 }
 .game .draw-letters-row .letters span {
   background-color: #01c587;
-  width: fit-content;
+  width: 50px;
+  text-align: center;
+  max-width: 100%;
   height: fit-content;
   padding: 10px;
   border-radius: 6px;
   color: white;
   font-size: 35px;
   cursor: pointer;
+}
+.game .draw-letters-row .letters span.clicked {
+  opacity: 0.1;
+  background-color: #140000;
 }
 @media (max-width: 767px) {
   .game .draw-letters-row {
