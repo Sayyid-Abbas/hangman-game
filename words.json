@@ -1,0 +1,42 @@
+[
+    {
+        "from": "Names",
+        "elements": ["Ali", "Mohammed", "Qasim"]
+    },
+    {
+        "from": "Colors",
+        "elements": ["Red", "Blue", "Green"]
+    },
+    {
+        "from": "Cities",
+        "elements": ["Baghdad", "Cairo", "Riyadh"]
+    },
+    {
+        "from": "Animals",
+        "elements": ["Cat", "Dog", "Elephant"]
+    },
+    {
+        "from": "Languages",
+        "elements": ["Arabic", "English", "French"]
+    },
+    {
+        "from": "Fruits",
+        "elements": ["Apple", "Banana", "Mango"]
+    },
+    {
+        "from": "Countries",
+        "elements": ["Iraq", "Egypt", "Saudi Arabia"]
+    },
+    {
+        "from": "Subjects",
+        "elements": ["Math", "Physics", "Biology"]
+    },
+    {
+        "from": "Jobs",
+        "elements": ["Doctor", "Engineer", "Teacher"]
+    },
+    {
+        "from": "Frameworks",
+        "elements": ["React", "Vue", "Angular"]
+    }
+]
