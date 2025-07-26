@@ -142,7 +142,7 @@ body .loader {
 .game .draw-letters-row .the-draw > .leg-right {
   position: absolute;
   background-color: black;
-  /* display: none; */
+  display: none;
 }
 .game .draw-letters-row .the-draw > .floor {
   width: 100px;
@@ -342,7 +342,7 @@ body .loader {
   color: black;;
   border-radius: 10px;
 }
-.game .answer-row span::before {
+.game .answer-row span.has-before::before {
   content: "";
   position: absolute;
   background-color: black;
