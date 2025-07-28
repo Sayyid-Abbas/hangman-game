@@ -79,7 +79,7 @@ body .loader {
 }
 @media (max-width: 767px) {
   .welcome .title {
-    font-size: 20px;
+    font-size: 17px;
   }
   .welcome .desc {
     font-size: 16px;
