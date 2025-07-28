@@ -22,6 +22,9 @@ function buildAndAppendFinalPage() {
     thanks.className = "thanks";
     thanks.textContent = "Thanks For Trying Out The Game";
 
+    let buttons = document.createElement('div');
+    buttons.className = "buttons";
+
     let retry = document.createElement("button");
     retry.className = "re-try";
     retry.textContent = "Retry";
@@ -30,10 +33,12 @@ function buildAndAppendFinalPage() {
     home.className = "home";
     home.textContent = "Home";
 
+    buttons.appendChild(retry);
+    buttons.appendChild(home);
+
     finalPage.appendChild(title);
     finalPage.appendChild(thanks);
-    finalPage.appendChild(retry);
-    finalPage.appendChild(home);
+    finalPage.appendChild(buttons);
 
     document.body.innerHTML = "";
     document.body.appendChild(finalPage);
