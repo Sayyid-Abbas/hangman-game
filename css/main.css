@@ -110,6 +110,7 @@ body .loader {
 .game .lost,
 .game .win {
   width: 500px;
+  max-width: 100%;
   height: 300px;
   position: absolute;
   left: 50%;
@@ -174,6 +175,11 @@ body .loader {
   border-radius: 10px;
   font-size: 20px;
   margin-bottom: 20px;
+}
+@media (max-width: 767px) {
+  .game .info-row {
+    font-size: 16px;
+  }
 }
 .game .info-row .word-from span {
   color: #cb1111f8;
