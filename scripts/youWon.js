@@ -1,3 +1,5 @@
+import displayFinalPage from "./displayFinalPage.js"
+
 // Display you won
 export default function displayYouWon() {
     document.body.style.pointerEvents = "none";
@@ -19,5 +21,10 @@ export default function displayYouWon() {
     
     setTimeout(() => {
         game.appendChild(winContainer);
+
+        nextButton.addEventListener("click", () => {
+            displayFinalPage();
+        })
     }, 1000)
+    return nextButton;
 }

@@ -1,11 +1,15 @@
 import buildGame from "./buildGame.js";
 import displayYouLost from "./youLost.js"
 import displayYouWon from "./youWon.js"
+import buildWelcome from "./buildWelcome.js"
+
+// First we display welcome page
+buildWelcome();
 
 
 // Welcome section in the game
 let start = document.querySelector(".start");
-let loader = document.createElement("div");
+export let loader = document.createElement("div");
 loader.className = "loader";
 start.onclick = () => {
     document.body.innerHTML = "";
@@ -112,8 +116,26 @@ function disableLetter(letter) {
             inWord++;
         }
     }
-
+    // If the letter count is the same in 
+    // the ansewr row and in the word then we
+    // disable it
     if(inWord == inAnswer) {
         letter.classList.add("clicked");
     }
+}
+
+export function startAgain() {
+    document.body.innerHTML = "";
+    document.body.appendChild(loader);
+    
+    setTimeout(() => {
+        wrongTrys = 0;
+        document.body.innerHTML = "";
+        startGame();
+    }, 1000)
+    
+}
+
+export function goHome() {
+    document.location.reload();
 }

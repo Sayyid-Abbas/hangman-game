@@ -1,3 +1,5 @@
+import displayFinalPage from "./displayFinalPage.js"
+
 // Display you Lost
 export default function displayYouLost() {
     document.body.style.pointerEvents = "none";
@@ -19,5 +21,11 @@ export default function displayYouLost() {
     
     setTimeout(() => {
         game.appendChild(lostContainer);
+
+        nextButton.addEventListener("click", () => {
+            displayFinalPage();
+        })
     }, 1000)
+    
+    return nextButton;
 }
