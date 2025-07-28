@@ -411,6 +411,75 @@ body .loader {
   bottom: 0px;
 }
 /* End Game */
+/* Final Page */
+.final-page {
+  background-color: #EEE;
+  border-radius: 10px;
+  width: 1000px;
+  max-width: 100%;
+  padding: 20px;
+  margin: 100px auto;
+}
+.final-page .title {
+  text-align: center;
+  background-color: #02cc96;
+  width: fit-content;
+  margin: 0px auto 50px;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 25px;
+  color: white;
+}
+.final-page .thanks {
+  background-color: #009c76;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.final-page .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.final-page .re-try,
+.final-page .home {
+  background-color: #52a98d;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  border: none;
+}
+.final-page .buttons .re-try:hover,
+.final-page .buttons .home:hover {
+  background-color: #1e8061;
+}
+@media (max-width: 767px) {
+  .final-page .title {
+    font-size: 20px;
+  }
+
+  .final-page .thanks {
+    font-size: 16px;
+  }
+
+  .final-page .re-try,
+  .final-page .home {
+    font-size: 16px;
+  }
+
+  .final-page .re-try:hover,
+  .final-page .home:hover {
+    background-color: #52a98d;
+  }
+}
+/* End Final Page */
 /* Animation */
 @keyframes spin {
   0% {
