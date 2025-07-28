@@ -42,12 +42,10 @@ function checkAnswers() {
     lettersContainer.addEventListener("click", (e) => {
         letters.forEach((letter) => {
             if(letter.contains(e.target)) {
-                console.log(randomWord);
                 // If the letter is in the word we put it in 
                 // the row letters
                 if(checkLetter(letter.textContent) > -1) {
                    let rowLength = putLetterInRow(letter.textContent);
-                   console.log(rowLength);
                    // Check if we completed the word
                     if(randomWord.length == rowLength) {
                         displayYouWon();
